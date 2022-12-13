@@ -382,7 +382,7 @@ function returnHome() {
 }
 
 function onlyLetters(str) {
-  return /^[a-zA-Z]+$/.test(str);
+  return /^[a-zA-Z\s]+$/.test(str);
 }
 
 function isDate(str) {
