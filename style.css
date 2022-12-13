@@ -671,6 +671,38 @@ p {
   font-style:normal;
 }
 
+#payment {
+  display:none;
+}
+
+  #payment img {
+    width:15vw;
+    grid-column-start:1;
+    grid-column-end:3;
+    justify-self:center;
+  }
+
+  #complete-purchase {
+    width:100%;
+    margin-top:4vmin;
+    display:flex;
+    justify-content:center;
+    grid-column-start:1;
+    grid-column-end:3;;
+  }
+
+    #complete-purchase button {
+      color:#4f4f4f;
+      border:0.5px #4f4f4f solid;
+      margin-bottom:0;
+      transition:color 0.25s, border 0.25s;
+    }
+
+    #complete-purchase button:hover {
+      color:#ff5416;
+      border:0.5px #ff5416 solid;
+    }
+
 @keyframes slide-left {
   0% {
     transform:translateX(0);

@@ -81,7 +81,7 @@
             <option value="poor">Poor</option>
             <option value="depressed">Depressed</option>
           </select>
-          <label for="ssn">SSN<span class="important">*</span></label>
+          <label for="ssn">SSN<span class="important">* </span><span class="unit"><br>for human confirmation purposes. your data will remain secure.</span></label>
           <input type="text" id="ssn" name="ssn">
         </div>
         <div class="show" id="prev-next-bar">
@@ -139,8 +139,22 @@
         <span id="trial-header">Your Free Trial is Over</span>
         Purchase a membership to continue planning your day and to gain access to our full range of customized life curation tools.
         <span class="logo">$30.99/mo</span>
-        <a href="payment.html"><button>Buy Now</button></a>
+        <button id="purchase">Buy Now</button>
       </div>
+      <form id="payment">
+        <div class="phase showPhase">
+          <img src="IMGS/creditcards.png">
+          <label for="fullName">Name On Card<span class="important">*</span></label>
+          <input type="text" id="fullName" name="fullName">
+          <label for="cardNo">Card #<span class="important">*</span></label>
+          <input type="text" id="cardNo" name="cardNo">
+          <label for="expiration">Expiration (MM/YY)<span class="important">*</span></label>
+          <input type="text" id="expiration" name="expiration">
+          <label for="security">Security Code<span class="important">*</span></label>
+          <input type="text" id="security" name="security">
+          <a href="index.html" id="complete-purchase"><button type="button">Complete Purchase</button></a>
+        </div>
+      </form>
     </div>
     <script src="script.js"></script>
   </body>

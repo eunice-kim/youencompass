@@ -61,7 +61,7 @@ function prevPhase() {
 function calculateResults() {
   document.getElementById("form").style.display="none";
   document.getElementById("loading").style.display="flex";
-  setTimeout( function() { showResults(); }, 110);
+  setTimeout( function() { showResults(); }, 11000);
 }
 
 var errorMessage = document.getElementById("error");
@@ -213,7 +213,7 @@ function showResults() {
     let struggle = document.getElementById("struggle");
     let userAnswer = struggle.options[struggle.selectedIndex].value;
     if (userAnswer == "busy"){
-      errorMessage.innerHTML="You don't have time to go to the gym.";
+      errorMessage.innerHTML="You don't have time to go to the movies.";
     }
     else if (userAnswer == "poor") {
       errorMessage.innerHTML="Are you sure you can afford to go to the movies?";
@@ -298,4 +298,11 @@ function endPage() {
   document.getElementById("results").style.display="none";
   document.getElementById("tomorrow").style.display="none";
   document.getElementById("fullPlan").classList.add("show");
+}
+
+document.getElementById("purchase").addEventListener("click", buyPage);
+
+function buyPage() {
+  document.getElementById("fullPlan").classList.remove("show");
+  document.getElementById("payment").classList.add("show");
 }
