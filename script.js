@@ -25,14 +25,61 @@ function showHidePrevNextButtons() {
   }
 }
 
+var inputError = document.getElementsByClassName('input-error');
 document.getElementById("next").addEventListener("click", nextButton);
 
 function nextButton() {
-  if (phase == 4) {
-    calculateResults();
+  if (phase == 1) {
+    document.getElementById('age').classList.remove("error-selected");
+    document.getElementById('height').classList.remove("error-selected");
+    document.getElementById('weight').classList.remove("error-selected");
+    if (document.getElementById('age').value == "" || document.getElementById('height').value == "" || document.getElementById('weight').value == "" || isNaN(document.getElementById('age').value) || isNaN(document.getElementById('height').value) || isNaN(document.getElementById('weight').value)) {
+      inputError[phase - 1].classList.add("show");
+      if (document.getElementById('age').value == "" || isNaN(document.getElementById('age').value)) {
+        document.getElementById('age').classList.add("error-selected");
+      }
+      if (document.getElementById('height').value == "" || isNaN(document.getElementById('height').value)) {
+        document.getElementById('height').classList.add("error-selected");
+      }
+      if (document.getElementById('weight').value == "" || isNaN(document.getElementById('weight').value)) {
+        document.getElementById('weight').classList.add("error-selected");
+      }
+    }
+    else {
+      inputError[phase - 1].classList.remove("show");
+      nextPhase();
+    }
   }
-  else {
+  else if (phase == 2) {
+    document.getElementById('handle').classList.remove("error-selected");
+    document.getElementById('followers').classList.remove("error-selected");
+    if (document.getElementById('handle').value == "" || document.getElementById('followers').value == "" || isNaN(document.getElementById('followers').value)) {
+      inputError[phase - 1].classList.add("show");
+      if (document.getElementById('handle').value == "") {
+        document.getElementById('handle').classList.add("error-selected");
+      }
+      if (document.getElementById('followers').value == "" || isNaN(document.getElementById('followers').value)) {
+        document.getElementById('followers').classList.add("error-selected");
+      }
+    }
+    else {
+      inputError[phase - 1].classList.remove("show");
+      nextPhase();
+    }
+  }
+  else if (phase == 3) {
     nextPhase();
+  }
+  else if (phase == 4) {
+    document.getElementById('ssn').classList.remove("error-selected");
+    if (document.getElementById('ssn').value == "" || isNaN(document.getElementById('ssn').value) || document.getElementById('ssn').value.length != 9) {
+      inputError[phase - 2].classList.add("show");
+      document.getElementById('ssn').classList.add("error-selected");
+    }
+    else {
+      inputError[phase - 2].classList.remove("show");
+      calculateResults();
+    }
   }
 }
 
@@ -305,4 +352,45 @@ document.getElementById("purchase").addEventListener("click", buyPage);
 function buyPage() {
   document.getElementById("fullPlan").classList.remove("show");
   document.getElementById("payment").classList.add("show");
+}
+
+document.getElementById("complete-purchase").addEventListener("click", returnHome);
+
+function returnHome() {
+  document.getElementById('fullName').classList.remove("error-selected");
+  document.getElementById('cardNo').classList.remove("error-selected");
+  document.getElementById('expiration').classList.remove("error-selected");
+  document.getElementById('security').classList.remove("error-selected");
+  if (document.getElementById('fullName').value == "" || !onlyLetters(document.getElementById('fullName').value) || document.getElementById('cardNo').value == "" || isNaN(document.getElementById('cardNo').value) || document.getElementById('cardNo').value.length != 16 || document.getElementById('expiration').value == "" || !isDate(document.getElementById('expiration').value) || document.getElementById('security').value == "" || isNaN(document.getElementById('security').value) || document.getElementById('security').value.length != 3) {
+    document.getElementById('card-error').classList.add("show");
+    if (document.getElementById('fullName').value == "" || !onlyLetters(document.getElementById('fullName').value)) {
+      document.getElementById('fullName').classList.add("error-selected");
+    }
+    if (document.getElementById('cardNo').value == "" || isNaN(document.getElementById('cardNo').value) || document.getElementById('cardNo').value.length != 16) {
+      document.getElementById('cardNo').classList.add("error-selected");
+    }
+    if (document.getElementById('expiration').value == "" || !isDate(document.getElementById('expiration').value)) {
+      document.getElementById('expiration').classList.add("error-selected");
+    }
+    if (document.getElementById('security').value == "" || isNaN(document.getElementById('security').value) || document.getElementById('security').value.length != 3) {
+      document.getElementById('security').classList.add("error-selected");
+    }
+  }
+  else {
+    window.location.href="index.html";
+  }
+}
+
+function onlyLetters(str) {
+  return /^[a-zA-Z]+$/.test(str);
+}
+
+function isDate(str) {
+  if (str.length != 5) { return false; }
+  else if (str.charAt(2) != "/") { return false; }
+  else if (isNaN(str.charAt(0))) { return false; }
+  else if (isNaN(str.charAt(1))) { return false; }
+  else if (isNaN(str.charAt(4))) { return false; }
+  else if (isNaN(str.charAt(5))) { return false; }
+  else { return true; }
 }

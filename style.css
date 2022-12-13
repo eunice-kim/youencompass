@@ -488,6 +488,21 @@ form {
       background:red linear-gradient(0deg, #ffa298 0%, #ffa298 100%);
     }
 
+  .input-error {
+    grid-column-start:1;
+    grid-column-end:3;
+    justify-self:center;
+    font-size:2vmin;
+    margin-top:1vmin;
+    font-style:italic;
+    color:#ff5416;
+    display:none;
+  }
+
+  .error-selected {
+    border:#ff5416 1px solid;
+  }
+
   #prev-next-bar {
     width:100%;
     display:flex;
@@ -683,22 +698,20 @@ p {
   }
 
   #complete-purchase {
-    width:100%;
     margin-top:4vmin;
-    display:flex;
-    justify-content:center;
+    justify-self:center;
     grid-column-start:1;
     grid-column-end:3;;
   }
 
-    #complete-purchase button {
+    #complete-purchase {
       color:#4f4f4f;
       border:0.5px #4f4f4f solid;
       margin-bottom:0;
       transition:color 0.25s, border 0.25s;
     }
 
-    #complete-purchase button:hover {
+    #complete-purchase:hover {
       color:#ff5416;
       border:0.5px #ff5416 solid;
     }

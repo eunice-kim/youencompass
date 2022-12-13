@@ -35,6 +35,7 @@
             <input type="text" id="weight" name="weight">
             <span class="unit">LB</span>
           </div>
+          <div class="input-error">*There is an invalid input.</div>
         </div>
         <div class="phase" id="phase-2">
           <label for="ie">I am an...<span class="important">*</span></label>
@@ -48,10 +49,11 @@
             <option value="early">Early Bird</option>
             <option value="night">Night Owl</option>
           </select>
-          <label for="insta">Social Media Handle<span class="important">*</span></label>
-          <input type="text" id="insta" name="insta">
+          <label for="handle">Social Media Handle<span class="important">*</span></label>
+          <input type="text" id="handle" name="handle">
           <label for="followers"># of followers<span class="important">*</span></label>
           <input type="text" id="followers" name="followers">
+          <div class="input-error">*There is an invalid input.</div>
         </div>
         <div class="phase" id="phase-3">
           <label for="relationship-status">Relationship Status<span class="important">*</span></label>
@@ -83,6 +85,7 @@
           </select>
           <label for="ssn">SSN<span class="important">* </span><span class="unit"><br>for human confirmation purposes. your data will remain secure.</span></label>
           <input type="text" id="ssn" name="ssn">
+          <div class="input-error">*There is an invalid input.</div>
         </div>
         <div class="show" id="prev-next-bar">
           <div id="prev">PREV</div>
@@ -152,7 +155,8 @@
           <input type="text" id="expiration" name="expiration">
           <label for="security">Security Code<span class="important">*</span></label>
           <input type="text" id="security" name="security">
-          <a href="index.html" id="complete-purchase"><button type="button">Complete Purchase</button></a>
+          <div class="input-error" id="card-error">*Please enter valid card information.</div>
+          <button type="button" id="complete-purchase">Complete Purchase</button>
         </div>
       </form>
     </div>
