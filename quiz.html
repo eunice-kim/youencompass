@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz</title>
+  </head>
+  <body>
+    <div id="container">
+      <div class="nav-bar">
+        <a id="home" href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+      </div>
+      <div class="logo" id="quiz-header">You&Compass</div>
+      <div id="quiz-subheader">the quiz</div>
+      <form id="form">
+        <div class="show" id="progress-bar">
+          <div class="progress-mark"></div>
+          <div class="progress-mark"></div>
+          <div class="progress-mark"></div>
+          <div class="progress-mark"></div>
+        </div>
+        <div class="show" id="phase-header">Phase One</div>
+        <div class="phase showPhase" id="phase-1">
+          <label for="age">Age<span class="important">*</span></label>
+          <input type="text" id="age" name="age">
+          <label for="height">Height<span class="important">*</span></label>
+          <div class="input">
+            <input type="text" id="height" name="height">
+            <span class="unit">IN</span>
+          </div>
+          <label for="weight">Weight<span class="important">*</span></label>
+          <div class="input">
+            <input type="text" id="weight" name="weight">
+            <span class="unit">LB</span>
+          </div>
+        </div>
+        <div class="phase" id="phase-2">
+          <label for="ie">I am an...<span class="important">*</span></label>
+          <select id="ie" name="ie">
+            <option value="Introvert">Introvert</option>
+            <option value="Extrovert">Extrovert</option>
+            <option value="Ambivert">Ambivert</option>
+          </select>
+          <label for="sleep">I am a(n)...<span class="important">*</span></label>
+          <select id="sleep" name="sleep">
+            <option value="early">Early Bird</option>
+            <option value="night">Night Owl</option>
+          </select>
+          <label for="insta">Social Media Handle<span class="important">*</span></label>
+          <input type="text" id="insta" name="insta">
+          <label for="followers"># of followers<span class="important">*</span></label>
+          <input type="text" id="followers" name="followers">
+        </div>
+        <div class="phase" id="phase-3">
+          <label for="relationship-status">Relationship Status<span class="important">*</span></label>
+          <select id="relationship-status" name="relationship-status">
+            <option value="single">Single</option>
+            <option value="dating">Dating</option>
+            <option value="married">Married</option>
+            <option value="married">Separated</option>
+          </select>
+          <label for="parents-relationship">I would describe my relationship with my parents as... <span class="important">*</span></label>
+          <select id="parents-relationship" name="parents-relationship">
+            <option value="a">Always Good</option>
+            <option value="s">Sometimes Good</option>
+            <option value="r">Rarely Good</option>
+            <option value="n">Never Good</option>
+            <option value="no">Nonexistent</option>
+          </select>
+          <label for="friend-name">name of close friend <span class="unit">(leave blank if you have no friends)</span></label>
+          <input type="text" id="friend-name" name="friend-name">
+        </div>
+        <div class="phase" id="phase-4">
+          <label for="ie">I struggle with feeling... <span class="important">*</span><span class="unit"><br>choose what describes you best</span></label>
+          <select id="struggle" name="struggle">
+            <option value="busy">Too Busy</option>
+            <option value="lonely">Lonely</option>
+            <option value="fat">Fat</option>
+            <option value="poor">Poor</option>
+            <option value="depressed">Depressed</option>
+          </select>
+          <label for="ssn">SSN<span class="important">*</span></label>
+          <input type="text" id="ssn" name="ssn">
+        </div>
+        <div class="show" id="prev-next-bar">
+          <div id="prev">PREV</div>
+          <div id="next">NEXT</div>
+        </div>
+      </form>
+      <div id="loading">
+        Analyzing Your Answers
+        <div id="loader">
+          <div id="loader-bar"></div>
+        </div>
+      </div>
+      <div id="tomorrow"></div>
+      <div id="results">
+        <div class="plan" id="plan-1">
+          What time will you wake up?
+          <div class="options">
+            <div class="option" id="5am">5AM-7AM</div>
+            <div class="option" id="8am">8AM-11AM</div>
+            <div class="option" id="12pm">12PM-3PM</div>
+          </div>
+        </div>
+        <div class="plan" id="plan-2">
+          For breakfast, let's eat:
+          <div class="options">
+            <div class="option" id="breakfast-unhealthy">
+              <img src="IMGS/breakfast1.jpeg">
+            </div>
+            <div class="option" id="breakfast-healthy">
+              <img src="IMGS/breakfast2.jpeg">
+            </div>
+            <div class="option" id="breakfast-none">Nothing</div>
+          </div>
+        </div>
+        <div class="plan" id="plan-3">
+          Today, you will:
+          <div class="options">
+            <div class="option" id="work">Go To Work</div>
+            <div class="option" id="gym">Go To The Gym</div>
+            <div class="option" id="movies">Go To The Movies</div>
+          </div>
+        </div>
+        <div class="plan" id="plan-4">
+          Today, you will see:
+          <div class="options">
+            <div class="option" id="parents">Your Parents</div>
+            <div class="option" id="friend"></div>
+            <div class="option" id="noone">No One</div>
+          </div>
+        </div>
+        <div id="error"></div>
+      </div>
+      <div id="fullPlan">
+        <span id="trial-header">Your Free Trial is Over</span>
+        Purchase a membership to continue planning your day and to gain access to our full range of customized life curation tools.
+        <span class="logo">$30.99/mo</span>
+        <a href="payment.html"><button>Buy Now</button></a>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
